@@ -49,7 +49,7 @@ def userDetails(request,pk):
             return JsonResponse(res)
     
     elif request.method == 'PUT':
-        id = User.objects.filter(id=pk)
+        id = User.objects.get(id=pk)
         if id:
             json_data = request.body
             stream = io.BytesIO(json_data)
