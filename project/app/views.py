@@ -89,7 +89,7 @@ def userDetails(request,pk):
             return JsonResponse(res)
 
     elif request.method == 'DELETE':
-        id = python_data.filter('pk')
+        id = User.objects.get(id=pk)
         if id:
             stu = User.objects.get(id=pk)
             stu.delete()
